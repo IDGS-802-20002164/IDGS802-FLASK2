@@ -1,0 +1,10 @@
+Hola Mundo!!!
+Mario
+Pedro
+
+
+
+Matricula:12345
+Nombre:Mario
+Apellidos:Lopez
+correo:mlopez@umanimundial.edu.mx

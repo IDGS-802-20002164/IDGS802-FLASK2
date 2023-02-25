@@ -1,0 +1,52 @@
+{% extends "layout.html"%}
+
+{% block content %}
+
+
+
+<div class="container-fluid">
+    <div class="mt-4 text-center">
+       
+        </div>
+     <div class="row mt-4 justify-content-center">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-primary text-center">Traductor</h2>
+                </div>
+                <div class="card-body">
+                    {%from "_macros.html" import render_firld %}
+                    <form class="form" action="" method="post" novalidate>
+                        <div class="from-group">
+                            {{render_firld(form.español)}}
+                            {{render_firld(form.ingles)}}
+                            <input type="submit" name="a" value="Registrar">
+                        </div>
+                    </form>
+
+                    <form class="form"action="" method="post" novalidate >
+                        <div>
+                            <input type="radio" id="ingles" name="drone" value="1"
+                                    checked>
+                            <label for="suma">Ingles</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" id="español" name="drone" value="2">
+                            <label for="resta">Español</label>
+                        </div>
+                
+                        {{render_firld(form2.buscar)}}
+                        <input type="submit" name="btn" value="buscar">
+                
+                        <h3>{{pal}}</h3>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+
+{%endblock%}
