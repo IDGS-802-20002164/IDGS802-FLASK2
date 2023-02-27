@@ -1,0 +1,194 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+
+
+<div class="container-fluid" >
+    <div class="mt-4 text-center">
+       
+        </div>
+     <div class="row mt-4 justify-content-center">
+        <div class="col-9">
+            <p>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-primary text-center">Calculadora de resistencias</h2>
+                </div>
+                <div class="card-body">
+                    {%from "_macros.html" import render_select %}
+                    <form class="form" action="" method="post" novalidate>
+                        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                        <div class="from-group">
+
+                            {{render_select(form.linea1)}}
+                            {{render_select(form.linea2)}}
+                            {{render_select(form.linea3)}}
+
+                        </div>
+                 
+
+                    
+                        <h5>Terminal</h5>
+                        
+                        <div>
+                            <input type="radio" id="dorado" name="drone" value="1"
+                                    checked>
+                            <label for="dorado">Dorado    0.05</label>
+                        </div>
+                
+                        <div>
+                            <input type="radio" id="plata" name="drone" value="2">
+                            <label for="plata">Plata    0.10</label>
+                        </div>
+                        
+                        <div>
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    
+                                    <th scope="col">Col B1</th>
+                                    <th scope="col">Col B2</th>
+                                    <th scope="col">Col B3</th>
+                                    <th scope="col">Col B4</th>
+                                    <th scope="col">Valor</th>
+                                    <th scope="col">Minimo</th>
+                                    <th scope="col">Maximo</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                  <tr>
+                                    <td style="display: none">{{ color1 }}</td>
+                                    <td style="display: none">{{ color2 }}</td>
+                                    <td style="display: none">{{ color3 }}</td>
+                                    <td style="display: none">{{ color4 }}</td>
+
+                                    <td {%if color1 == 'Negro'%}
+                                    style="background-color: black; color: white;"
+            
+                                    {% elif color1 == 'Café' %}
+                                    style="background-color: brown;color: white;"
+
+                                    {% elif color1 == 'Rojo' %}
+                                    style="background-color: red;color: white;"
+
+                                    {% elif color1 == 'Anaranjado' %}
+                                    style="background-color: orange;color: white;"
+
+                                    {% elif color1 == 'Amarillo' %}
+                                    style="background-color: yellow;color: black;"
+
+                                    {% elif color1 == 'Verde' %}
+                                    style="background-color: green;color: white;"
+
+                                    {% elif color1 == 'Azul' %}
+                                    style="background-color: blue;color: white;"
+
+                                    {% elif color1 == 'Morado' %}
+                                    style="background-color: purple;color: white;"
+
+                                    {% elif color1 == 'Gris' %}
+                                    style="background-color: gray;color: white;"
+
+                                    {% else %}style="background-color: white;"
+                                    {% endif %}>{{color1}}</td>
+
+                                    <td {%if color2 == 'Negro'%}
+                                    style="background-color: black; color: white;"
+            
+                                    {% elif color2 == 'Café' %}
+                                    style="background-color: brown;color: white;"
+
+                                    {% elif color2 == 'Rojo' %}
+                                    style="background-color: red;color: white;"
+
+                                    {% elif color2 == 'Anaranjado' %}
+                                    style="background-color: orange;color: white;"
+
+                                    {% elif color2 == 'Amarillo' %}
+                                    style="background-color: yellow;color: black;"
+
+                                    {% elif color2 == 'Verde' %}
+                                    style="background-color: green;color: white;"
+
+                                    {% elif color2 == 'Azul' %}
+                                    style="background-color: blue;color: white;"
+
+                                    {% elif color2 == 'Morado' %}
+                                    style="background-color: purple;color: white;"
+
+                                    {% elif color2 == 'Gris' %}
+                                    style="background-color: gray;color: white;"
+
+                                    {% else %}style="background-color: white;"
+                                    {% endif %}>{{color2}}</td>
+
+                                    <td {%if color3 == 'Negro'%}
+                                    style="background-color: black; color: white;"
+            
+                                    {% elif color3 == 'Café' %}
+                                    style="background-color: brown;color: white;"
+
+                                    {% elif color3 == 'Rojo' %}
+                                    style="background-color: red;color: white;"
+
+                                    {% elif color3 == 'Anaranjado' %}
+                                    style="background-color: orange;color: white;"
+
+                                    {% elif color3 == 'Amarillo' %}
+                                    style="background-color: yellow;color: black;"
+
+                                    {% elif color3 == 'Verde' %}
+                                    style="background-color: green;color: white;"
+
+                                    {% elif color3 == 'Azul' %}
+                                    style="background-color: blue;color: white;"
+
+                                    {% elif color3 == 'Morado' %}
+                                    style="background-color: purple;color: white;"
+
+                                    {% elif color3 == 'Gris' %}
+                                    style="background-color: gray;color: white;"
+
+                                    {% else %}style="background-color: white;"
+                                    {% endif %}>{{color3}}</td>
+
+
+                                    <td {%if color4 == 'Dorado'%}
+                                    style="background-color: gold; color: black;"
+            
+                                    {% elif color4 == 'Plata' %}
+                                    style="background-color: silver;color: black;"
+
+                                    {% else %}style="background-color: white;"
+                                    {% endif %}>{{color4}}</td>
+                                    <td  >{{valor}}</td>
+                                    <td  >{{mini}}</td>
+                                    <td >{{maxi}}</td>
+
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        
+                        <center>
+                            <input type="submit" class="btn" name="btn" value="calcular">
+                        </center>
+                        
+                
+                      
+                    </form>
+                    
+                </div>
+            </div>
+            </p>
+        </div>
+
+    
+    </div>
+</div>
+
+
+{%endblock%}
